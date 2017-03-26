@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sentiment Analysis</title>
+	   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	   <link rel="stylesheet" type="text/css" href="../static/landing.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="../static/jslanding.js"></script>
+		<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+		<script type="text/javascript" src="http://mpld3.github.io/js/mpld3.v0.1.js"></script>
+</head>
+<body>
+
+	<div class="container-fluid">
+	<h1 align="center">Title goes here</h1>
+
+	<p>The tweet sentiment are analysed based on a given topic. NLTK is being used along with 7 different classifier algorithms in Machine Learning to analyse the tweet sentiment.</p><br/>
+
+	<p>Pick a topic to see its sentiments</p>
+	<form id ="tweetform">		
+		<input id="twtxt" type="text">
+		<input type="submit" id="selection"></input>
+	</form>
+
+	{% for plot in dict_of_plots %}
+        <div id="fig"></div>
+    {% endfor %}
+
+	</div>
+
+<script type="text/javascript">
+{% for plot in drawing %}
+	alert(plot)
+    // mpld3.draw_figure("fig", {{ plot }});
+{% endfor %}
+</script>
+</body>
+</html>

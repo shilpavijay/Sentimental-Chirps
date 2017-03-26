@@ -3,3 +3,4 @@
 twitterapiconnect.py
 *.txt
 __*  
+pickle/

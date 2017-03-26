@@ -32,11 +32,11 @@ class VoteClassifier(ClassifierI):
 		conf = ((votes.count(mode(votes))) / len(votes))*100
 		return conf
 
-doc_f=open("short_rev_docs.pickle","rb")
+doc_f=open("pickle/short_rev_docs.pickle","rb")
 document = pickle.load(doc_f)
 doc_f.close()
 
-wrdfeats_f=open("short_rev_wrdfeats.pickle","rb")
+wrdfeats_f=open("pickle/short_rev_wrdfeats.pickle","rb")
 word_features = pickle.load(wrdfeats_f)
 wrdfeats_f.close()
 
@@ -50,7 +50,7 @@ def find_features(dictionary):
 		features[w] = (w in dictwords)
 	return features
 
-feat_set_f = open("short_rev_feat_sets.pickle","rb")
+feat_set_f = open("pickle/short_rev_feat_sets.pickle","rb")
 feature_sets = pickle.load(feat_set_f)
 feat_set_f.close()
 
@@ -59,14 +59,14 @@ random.shuffle(feature_sets)
 training_set=feature_sets[:10000]
 testing_set=feature_sets[10000:]
 
-open_file = open("short_rev_NBC.pickle","rb")
+open_file = open("pickle/short_rev_NBC.pickle","rb")
 classifier = pickle.load(open_file)
 open_file.close()
 
 # print("Naive Bayes Algorithm accuracy percentage: ",nltk.classify.accuracy(classifier,testing_set)*100)
 # # classifier.show_most_informative_features(25)
 
-open_file = open("short_rev_MNBC.pickle","rb")
+open_file = open("pickle/short_rev_MNBC.pickle","rb")
 MNB_classifier = pickle.load(open_file)
 open_file.close()
 
@@ -74,7 +74,7 @@ open_file.close()
 
 ########################
 
-open_file = open("short_rev_BNBC.pickle","rb")
+open_file = open("pickle/short_rev_BNBC.pickle","rb")
 BNB_classifier = pickle.load(open_file)
 open_file.close()
 
@@ -82,7 +82,7 @@ open_file.close()
 
 ##########################
 
-open_file = open("short_rev_LR.pickle","rb")
+open_file = open("pickle/short_rev_LR.pickle","rb")
 LR_classifier = pickle.load(open_file)
 open_file.close()
 
@@ -91,7 +91,7 @@ open_file.close()
 ###########################
 
 
-open_file = open("short_rev_SGDC.pickle","rb")
+open_file = open("pickle/short_rev_SGDC.pickle","rb")
 SGDC_classifier = pickle.load(open_file)
 open_file.close()
 
@@ -99,7 +99,7 @@ open_file.close()
 
 ###########################
 
-open_file = open("short_rev_LRSVC.pickle","rb")
+open_file = open("pickle/short_rev_LRSVC.pickle","rb")
 LinerSVC_classifier = pickle.load(open_file)
 open_file.close()
 
@@ -107,7 +107,7 @@ open_file.close()
 
 ###########################
 
-open_file = open("short_rev_NUSVC.pickle","rb")
+open_file = open("pickle/short_rev_NUSVC.pickle","rb")
 NuSVC_classifier = pickle.load(open_file)
 open_file.close()
 

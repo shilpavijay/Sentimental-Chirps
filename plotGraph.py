@@ -1,7 +1,8 @@
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt, mpld3
 import matplotlib.animation as animation
 from matplotlib import style
 import time
+import json
 
 style.use("ggplot")
 
@@ -18,7 +19,7 @@ def animate(i):
     x = 0
     y = 0
 
-    for l in lines[-100:]:
+    for l in lines[-500:]:
         x += 1
         if "pos" in l:
             y += 1
@@ -31,4 +32,12 @@ def animate(i):
     subpl.clear()
     subpl.plot(xl,yl)
 anim = animation.FuncAnimation(figure, animate, interval=1000)
-plt.show()
+# plt.show()
+try:
+    json01 = json.dumps(mpld3.fig_to_dict(figure))
+    # print (json01)
+    # mpld3.fig_to_html(figure, template_type="simple")
+    # mpld3.save_html(figure,"test.html")
+except Exception as e:
+    print (e)
+# mpld3.show()
