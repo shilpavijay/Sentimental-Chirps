@@ -1,4 +1,12 @@
 
-Machine Learning and Natural Language processing used here in order to analyse tweets to determine their sentiments on a topic.
+Sentimental-Chirps
+---------------------
 
-The Project uses 7 different Classification Algorithms to determine if the tweets' sentiment is positive or negative. The results are plotted using Matplotlib.
+
+This project analyses real time tweets to determine the sentiment on a topic with respect to the tweets. Machine Learning and Natural Language processing is used.
+
+
+Libraries used: Scikit-Learn, NLTK, Tweepy 
+
+
+It uses 7 different Classification Algorithms to determine if the Tweets' Sentiment is Positive or Negative. The results are plotted using Matplotlib.
